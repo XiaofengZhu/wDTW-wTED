@@ -146,7 +146,7 @@ public class ProcessScores {
 		// End of estimating the optimal tau
 		
 		JavaPairRDD<String, Double> dtw_filtered_indexValues;
-		if (processScore.getScoreFolder().contains("vsm")){
+		if (processScore.getScoreFolder().contains("vsm") || processScore.getScoreFolder().contains("awe")){
 			dtw_filtered_indexValues = docParent_score_rdd
 					.filter(new Function <Tuple2<String, Double>, Boolean> (){
 						/**

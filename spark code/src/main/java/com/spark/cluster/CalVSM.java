@@ -142,7 +142,7 @@ public class CalVSM {
 		SparkConf conf = new SparkConf();
 		
 		conf.setAppName("cluster CalVSM")
-		.setMaster("local[*]")
+		//.setMaster("local[*]")
 		.set("spark.kryoserializer.buffer.max", "1g")
 	    .set("spark.executor.heartbeatInterval", "500000s")
 	    .set("spark.network.timeout", "10000000s")

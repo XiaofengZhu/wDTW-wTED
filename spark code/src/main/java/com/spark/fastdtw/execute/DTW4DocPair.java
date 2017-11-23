@@ -73,7 +73,7 @@ public class DTW4DocPair implements Serializable{
                     }
                 }
             }
-            return (double)results[m][n]/Math.max(m, n);
+            return (double)results[m][n];
 	}
 	public double getPVDTWDist(String document1_string, String document2_string){
 		double cost = 0.0;

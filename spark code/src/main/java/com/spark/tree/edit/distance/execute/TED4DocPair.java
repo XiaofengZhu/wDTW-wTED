@@ -20,7 +20,7 @@
 // SOFTWARE.
 
 // package test;
-package com.spark.tree.edit.distance.test;
+package com.spark.tree.edit.distance.execute;
 
 import com.spark.tree.edit.distance.APTED;
 import com.spark.tree.edit.distance.ParseDoc2Tree;
@@ -35,7 +35,7 @@ import java.io.Serializable;
  * @author Nikolaus Augsten, Mateusz Pawlik
  *
  */
-public class CorrectnessTest implements Serializable{
+public class TED4DocPair implements Serializable{
 
 	private APTED ted;
 	
@@ -48,7 +48,7 @@ public class CorrectnessTest implements Serializable{
 		double result;
 		t1 = LblTree.fromString(strT1);
 		t2 = LblTree.fromString(strT2);
-		result = ted.nonNormalizedTreeDist(t1, t2)/Math.max(t1.getNodeCount(), t2.getNodeCount());// normalized tree edit distance score 
+		result = ted.nonNormalizedTreeDist(t1, t2);
 		return result;
 	}	
 
@@ -175,7 +175,7 @@ public class CorrectnessTest implements Serializable{
   }
 	
   public static void main(String [] args) throws IOException{
-	  CorrectnessTest correctnessTest = new CorrectnessTest();
+	  TED4DocPair correctnessTest = new TED4DocPair();
 	  correctnessTest.init();
 	  
 	  ParseDoc2Tree parseDoc2Tree = new ParseDoc2Tree();

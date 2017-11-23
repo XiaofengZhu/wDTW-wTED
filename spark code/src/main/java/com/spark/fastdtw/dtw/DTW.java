@@ -59,8 +59,8 @@ public class DTW implements Serializable
 				cost = distFn.calcDistance(tsI.getMeasurementVector(i - 1), tsJ.getMeasurementVector(j - 1));
 //				fw.write("cost: " + cost + "\n");
 				double minLocalCost = Math.min(costMatrix[i-1][j], // insertion
-				                                          Math.min(costMatrix[i-1][j-1], // deletion
-				                                                   costMatrix[i][j-1])); // match
+				                                          Math.min(costMatrix[i-1][j-1], // replacement
+				                                                   costMatrix[i][j-1])); // deletion
 				costMatrix[i][j] = minLocalCost + cost; //info.getDistance();				
 			}
 		}
